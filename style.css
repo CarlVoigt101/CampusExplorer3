@@ -1,0 +1,1090 @@
+/* raleway-300 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/raleway-v22-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-300.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-regular - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/raleway-v22-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-500 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/raleway-v22-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-500.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-600 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/raleway-v22-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-600.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-700 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/raleway-v22-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-700.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-300italic - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  src: url('fonts/raleway-v22-latin-300italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-300italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-300italic.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-italic - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/raleway-v22-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-italic.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-500italic - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  src: url('fonts/raleway-v22-latin-500italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-500italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-500italic.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-600italic - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  src: url('fonts/raleway-v22-latin-600italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-600italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-600italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-600italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-600italic.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-700italic - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/raleway-v22-latin-700italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/raleway-v22-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/raleway-v22-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/raleway-v22-latin-700italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/raleway-v22-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/raleway-v22-latin-700italic.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+/* roboto-100 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('fonts/roboto-v29-latin-100.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-100.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-100.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-100italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: url('fonts/roboto-v29-latin-100italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-100italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-100italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-100italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-100italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-100italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-300 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/roboto-v29-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-300italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: url('fonts/roboto-v29-latin-300italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-300italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-300italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/roboto-v29-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/roboto-v29-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/roboto-v29-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-500italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('fonts/roboto-v29-latin-500italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-500italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-500italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-700italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/roboto-v29-latin-700italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/roboto-v29-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v29-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v29-latin-700italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v29-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v29-latin-700italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+h1{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.771vw;
+  line-height: 2.083vw;
+  letter-spacing: 0.015em;
+  color: #FFFFFF;
+}
+h2{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4.427vw;
+  line-height: 5.208vw; 
+  color: #FFFFFF;
+}
+h3{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.250vw;
+  line-height: 6.250vw; 
+  color: #ffffff;
+  
+}
+h4{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.823vw;
+  line-height: 0px; 
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.729vw;
+  line-height: 1.094vw;
+  color: #000000;
+}
+a{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.042vw;
+  line-height: 1.198vw; 
+  color: #FFFFFF;
+}
+#CampusSZ{
+  position: absolute;
+  z-index: 2;
+  left: 7vw;
+  top: -0.5vw;
+} 
+#HeadBG{
+position: absolute;
+z-index: 1;
+width: 18.229vw;
+height: 6vw;
+left: 0px;
+top: 0px;
+background: linear-gradient(244.05deg, rgba(212, 252, 121, 0.7) 2.99%, rgba(150, 230, 161, 0.7) 89.36%);
+backdrop-filter: blur(10px);
+border-radius: 0vw 0vw 1.719vw 0vw;
+display: block;
+}
+#Logo{
+position: absolute;
+z-index: 1;
+left: 2.448vw;
+top: 2.448vw;
+background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 0) 100%);
+}
+#Logo01{
+  position: absolute;
+  z-index: 3;
+  width: 3vw;
+  height: auto;  
+  left: 1.302vw;
+  top: 1.25vw;
+  cursor: pointer;
+}
+
+#LogoPNG{
+  width: 10.417vw;
+  height: auto;
+  display: none;
+  }
+#cHead{
+  position: absolute;
+  z-index: 1;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+#dHead{
+  position: absolute;
+  z-index: 1;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+#aHead{
+  position: absolute;
+  z-index: 1;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+#mHead{
+  position: absolute;
+  z-index: 1;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+#kHead{
+  position: absolute;
+  z-index: 1;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+#bHead{
+  position: absolute;
+  z-index: 2;
+  left: 2.604vw;
+  bottom: -1.979vw; 
+  display: none;
+}
+
+#avatare{
+  position: absolute;
+  z-index: 2;
+  right: 2.604vw;
+  bottom: 1.979vw; 
+  cursor: pointer;
+}
+#avaDef{
+  width: 4.688vw;
+  height: auto;
+  display: none;
+}
+#avaLach{
+  width: 4.688vw;
+  height: auto;
+  display: block;
+}
+#avaLeft{
+  width:  4.688vw;
+  height: auto;
+  display: none;
+}
+#avaZwink{
+  width:  4.688vw;
+  height: auto;
+  display: none;
+}
+#avaLove{
+  width: 4.688vw;
+  height: auto;
+  display: none;
+}
+#avaEye{
+  width:  4.688vw;
+  height: auto;
+  display: none;
+}
+#avaKreis{
+  position: absolute;
+  z-index: 1;
+  right: 2.604vw;
+  bottom: 1.823vw; 
+  width:  4.635vw;
+  height: 4.635vw;
+  background-color: rgba(255, 255, 255, 0.50);
+  text-align: center;
+  border-radius: 100px;
+  display: block;
+  animation-name: kreis;
+  animation-duration: 1.8s;
+  transform: scale(1);
+  animation-iteration-count: infinite;
+}
+#sprechK{
+  position: absolute;
+  z-index: 1;
+  right: 7.813vw;
+  bottom: 5.208vw; 
+  width:  17.448vw;
+  height: auto;
+  display: block;
+  filter: opacity(0.8);
+}
+#sprechG{
+  position: absolute;
+  z-index: 1;
+  right: 7.813vw;
+  bottom: 3.906vw; 
+  width:  17.448vw;
+  height: auto;
+  display: none;
+  filter: opacity(0.8);
+}
+
+@keyframes kreis {
+  from  {transform: scale(1.0);}
+  to  {transform: scale(1.15);;background-color: rgba(255, 255, 255, 0);}
+}
+
+#sprechTexte{
+  position: absolute;
+  z-index: 2;
+  right: 8.854vw;
+  bottom: 5.573vw; 
+  width:  15.625vw;
+  height: 4.167vw;
+  /* background-color: rgba(150, 230, 161, 0.7);  */
+}
+#txt1{
+  display: block;
+}
+#txt2{
+  display: none;
+}
+#txt3{
+  display: none;
+}
+#txt4{
+  display: none;
+}
+#txtC{
+  display: none;
+}
+#txtA{
+  display: none;
+}
+#txtB{
+  display: none;
+   /* groß */
+}
+#txtD{
+  display: none;
+}
+#txtM{
+  display: none;
+}
+#txtI1{
+  display: none;
+}
+#txtI2{
+  display: none;
+  /* groß */
+}
+#txtI3{
+  display: none;
+  /* groß */
+}
+button {
+
+  height: 2.604vw;
+  width: 7.813vw;
+  position: absolute;
+  z-index:1;
+  background-color: transparent; 
+  color: white;
+  /* border: 1.5px solid; */
+  border: 1.5px solid;
+  border-radius: 1.458vw;
+  
+  font-family: Roboto;
+  font-size: 0.938vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.458vw;
+  letter-spacing: -0.004em;
+  text-align: left;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.145);
+
+}
+#orbitIMG {
+  filter: invert(1);
+  width: 0.938vw;
+  height: auto;
+}
+#roadIMG {
+  filter: invert(0);
+  width: 0.833vw;
+  height: auto;
+}
+.navContainer{
+  position: absolute;
+  z-index: 1;
+  top: 1.823vw;
+  right: 9.375vw;
+  height: 1.2vw;
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  }
+.home{
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  }
+.home:hover{
+  text-decoration: none;
+  text-decoration: underline;
+  }
+.about{
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  }
+.about:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  }
+.contact{
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  }
+.contact:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  }
+.dreiD{
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  }
+.dreiD:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  }
+
+.a-enter-vr-button{
+  left: 50%;
+  
+}
+.Teleport{
+  z-index: 3;
+  top: 3.385vw;
+  right: 1.563vw;
+  height: 1.823vw;
+  width: 1.875vw;
+  text-align: center;
+  border-radius: 0vw 0vw 1.458vw 1.458vw;
+  background-color: transparent;
+  display: none;
+  }
+.Teleport:hover {
+  background-color: rgba(157, 157, 157, 0.385);
+  }
+
+.RoadButton{
+  top: 1.563vw;
+  right: 1.563vw;
+  height:  1.823vw;
+  width: 1.875vw;
+  text-align: center;
+  background-color: white;
+  display: none;
+  border-radius: 1.458vw 1.458vw 0vw 0vw;
+  }
+.RoadButton:hover{
+  background-color: white;
+}
+
+.backToOrbit {
+  top: 1.563vw;
+  right: 1.563vw;
+  height: 2.604vw;
+  width: 2.604vw;
+  display: none;
+  margin: 0.521vw;
+  text-align: center;
+}
+.backToOrbit:hover{
+  background-color: rgba(157, 157, 157, 0.631);
+}
+.Wireframe {
+  bottom: 2.604vw;
+  right: 47.2vw;
+  height: 2.604vw;
+  width: 7.813vw;
+  display: none;
+  text-align: center;
+}
+
+/* .topView {
+  bottom: 0px;
+  left: 0px;
+} */
+
+.rundgang {
+  bottom: 2.604vw;
+  left: 3.490vw;
+  height: 2.604vw;
+  width: 10.417vw;
+  
+  display: none;
+}
+
+.plus {
+  bottom: 2.604vw;
+  right: 42vw;
+  height: 2.604vw;
+  width: 2.604vw;
+  text-align: center;
+
+  display: none;
+}
+
+.minus {
+  bottom: 2.604vw;
+  right: 58vw;
+  height: 2.604vw;
+  width: 2.604vw;
+  text-align: center;
+
+  display: none;
+}
+.upb{
+  bottom: 2.604vw;
+  right: 42vw;
+  height: 2.604vw;
+  width: 2.604vw;
+  display: none;
+  transform: rotate(90deg);
+  text-align: center;
+}
+.dowb{
+  bottom: 2.604vw;
+  right: 58vw;
+  height: 2.604vw;
+  width: 2.604vw;
+  display: none;
+  transform: rotate(90deg);
+  text-align: center;
+}
+/*------------------------ hover cEG --------*/
+#CEGR {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 3.646vw;
+  text-decoration: none;
+
+}
+#CBG{
+  position: absolute;
+  display: none;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 18vw;
+  height: 100%;
+  background: linear-gradient(244.05deg, rgba(212, 252, 121, 0.7) 2.99%, rgb(84, 131, 90, 0.9) 89.36%);
+}
+#EG0{
+  display: none;
+  /* background-color: rgba(150, 230, 161, 0.7); */
+  
+}
+
+.bib {
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+  
+}
+.Audiomin {
+  font-size: 1.563vw;
+  line-height: 2.083vw;
+}
+.videoS{
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+
+.bib:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.Audiomin:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.videoS:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+/*------------------------ hover c1 --------*/
+#E1{
+  display: none;
+}
+.ausL {
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.fotoS {
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.regieR{
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.semi1{
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+
+.ausL:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.fotoS:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.regieR:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.semi1:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+/*------------------------ hover c2 --------*/
+#E2{
+  display: none;
+}
+.post {
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.pool {
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.dienst{
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+.semi2{
+  font-size: 1.563vw;
+  line-height: 2.083vw; 
+}
+
+.post:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.pool:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.dienst:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+.semi2:hover {
+  color: #d4fc79;
+  cursor: pointer;
+}
+/*----------------------------------------------------------------*/
+
+#loadingScreen{
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #f3f3f3;
+  display: block;
+  position: absolute;
+  z-index: 9;
+  display: block;
+}
+
+.loader {
+  border: 0.781vw solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 0.781vw solid rgba(150, 230, 161, 1);
+  width: 6.250vw;
+  height: 6.250vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+  z-index: 10;
+  position: absolute;
+  display: block;
+}
+#loaderContainer{
+  display: block;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#headAbout{
+  position: absolute;
+  z-index: 2;
+  top: 7vw;
+  left: 43vw;
+  margin: 0px;
+}
+section{
+  height: 100%;
+  width: 100%;
+  top:0px;
+  left:0px;
+  margin: 0px;
+  padding: 0px;;
+  position: static;
+  z-index: 0;
+}
+#sec4{
+  height:80%;
+}
+body{
+  /* background-color: #333333; */
+  background: linear-gradient(39deg, rgba(51,130,99,1) 0%, rgba(89,164,105,1) 38%, rgba(138,198,109,1) 70%, rgba(198,230,107,1) 100%);
+}
+
+h5{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1vw;
+  line-height: 1.5vw; 
+  color: #ffffff;
+  
+}
+.contactContainer{
+  position: absolute;
+  z-index: 2;
+  top: 15vw;
+  left: 38vw;
+  margin: 0px;
+  text-align: center;
+}
+.contact-links{
+  font-weight: 300;
+  font-size: 1.8vw;
+  line-height: 2.3vw; 
+  text-decoration: none;
+}
+.contact-links:hover{
+text-decoration: underline;
+}
+#headAbout2{
+  position: absolute;
+  z-index: 5;
+  margin-left: 42vw;
+  margin-top: 6.3vw;;
+  font-weight: 400;
+  font-size: 6vw;
+  line-height: 5.8vw; 
+}
+#headAbout3{
+  position: absolute;
+  z-index: 5;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-top: 10vw;;
+  font-weight: 400;
+  font-size: 3.5vw;
+  line-height: 4.5vw; 
+  text-align: center;
+}
+#aboutTxt{
+  position: absolute;
+  top: 28vw;
+  right:10vw;
+  width: 32vw;
+  font-size: 1.5vw;
+  color: white;
+  font-family: Raleway;
+  line-height: 1.8vw;
+}
+#aboutTxt2{
+  position: static;
+  margin-top: 6vw;
+  margin-left:6vw;
+  width: 31vw;
+  font-size: 1.5vw;
+  color: white;
+  font-family: Raleway;
+  line-height: 1.8vw;
+}
+#aboutTxt3{
+  position: static;
+  z-index: 5;
+  margin-top: 10vw;
+  margin-left:60vw;
+  margin-bottom: 10vw;
+  width: 31vw;
+  font-size: 1.5vw;
+  color: white;
+  font-family: Raleway;
+  line-height: 1.8vw;
+}
+#aboutTxt4{
+  position: static;
+  z-index: 5;
+  margin-top: 15vw;
+  margin-left:25vw;
+  margin-bottom: 10vw;
+  width: 50vw;
+  font-size: 1.5vw;
+  color: white;
+  font-family: Raleway;
+  line-height: 1.8vw;
+
+}
+#img1{
+  position: static;
+  margin-left: 6vw;
+  margin-top: 10vw;
+  z-index: 4;
+  height: 25vw;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#img2{
+  position: static;
+  margin-left: 45vw;
+  margin-top: 28vw;
+  z-index: 4;
+  height: 25vw;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#img3{
+  position: absolute;
+  left: 17vw;
+  top: 72vw;
+  z-index: 4;
+  height: 18vw;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#img4{
+  position: absolute;
+  left: 65vw;
+  top: 52vw;
+  z-index: 4;
+  height: 13vw;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#KontaktButton{
+  text-align: center;
+  margin-left: 45vw;
+  margin-top : 23vw;
+}
+video{
+  position: absolute;
+  z-index: 1;
+  left: 7vw;
+  top: 95vw;
+  width: 50.625vw;
+  height:27.250vw;
+}
+
+.impressum{
+  position: relative;
+  font-size: 0.7vw;
+  text-decoration: none;
+  font-family: raleway;
+  font-weight: 400;
+}
+.datenschutz{
+  position: relative;
+  font-size: 0.7vw;
+  text-decoration: none;
+  font-family: raleway;
+  font-weight: 400;
+}
+.impressum:hover{
+  text-decoration: underline;
+}
+.datenschutz:hover{
+  text-decoration: underline;
+}
+footer{
+  position: relative;
+  height: 1vw;
+  width: 97vw;
+  padding: 0px;
+  margin-top: 46.85vw;
+  text-align: right;
+}
+.footerabout{
+  position: relative;
+  height: 1vw;
+  width: 97vw;
+  padding: 0px;
+  margin-top: 5vw;
+  text-align: right;
+}
