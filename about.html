@@ -1,0 +1,80 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Campus Explorer Ostfalia</title>
+  <meta name="description" content="ABOUT" />
+  <meta name="author" content="Carl Voigt" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/assets/LogoCamp.png">
+</head>
+
+<body onload="loadFunction();">
+  <header>
+    <div class="navContainer">
+        <a class="home" href="index.html">STARTSEITE</a>
+        <a class="dreiD" href="main.html">3D MODELL</a>
+        <a class="about" href="about.html" style="text-decoration: underline; text-decoration-thickness: 2px;">ÜBER DAS PROJEKT</a>
+        <a class="contact" href="contact.html">KONTAKT</a>
+        </div>
+        <img id="Logo01" src="assets/LogoCamp.png"onclick="window.location.href = 'index.html'"> 
+        <!-- <h2 id="headAbout">Über das Projekt</h2> -->
+    </header> 
+
+ <section id="sec1">
+  <h2 id="headAbout2">Virtual Campus Explorer</h2> 
+<img id="img1" src="assets/033.PNG">
+<p id="aboutTxt">
+Bei der vorliegenden Website handelt es sich um ein Hochschulprojekt,
+welches sich im Rahmen des Moduls „Medienpraxis“ aus dem 5. Semesters des
+Bachelorstudienganges Mediendesign mit dem Thema „Virtuelle Welten im Web" befasst.
+</p> 
+
+<img id="img2" src="assets/034.PNG">
+<img id="img3" src="assets/036.PNG">
+<img id="img4" src="assets/030.PNG">
+</section>
+<section id="sec2">
+  <p id="aboutTxt2">
+    Im Zuge dessen wurde nicht nur ein 3D-Modell und ein Prototyp für die Website des virtuellen Campus konzipiert und gestaltet,
+     sondern auch die Website an sich mit HTML, CSS und vor allem JavaScript programmiert.
+    </p> 
+</section>
+<section id="sec3">
+  <p id="aboutTxt3">
+    Sinn und Zweck dieser Website soll sein, dass sich Studieninteressierte vorab einen Eindruck vom Campus verschaffen können,
+     ohne dabei ihre heimischen vier Wände verlassen zu müssen.
+    </p> 
+
+    <video id="video" src="assets/WebsiteReel.mp4" autoplay muted loop></video>
+
+
+    <p id="aboutTxt4">
+      An dieser Stelle möchte ich mich bei all denjenigen bedanken, die mich während der Anfertigung dieser Projektarbeit unterstützt und motiviert haben.<br><br>
+      Ich möchte mich bei <i>Prof. Dipl.-Ing. Klaus Neuburg</i> bedanken, der diese Arbeit betreut und begutachtet hat. Für die hilfreichen Anregungen und die konstruktive Kritik bei der Erstellung dieses Projektes möchte ich mich herzlich bedanken.<br>
+      Außerdem möchte ich mich bei <i>Zina Ghannadan</i> bedanken, der mir bei der Programmierung und Entwicklung der Website geholfen hat. 
+
+      </p> 
+    </section>
+    <section id="sec4">
+    <h2 id="headAbout3">Wenn du mehr über das Projekt erfahren möchtest,<br>kannst du uns gern kontaktieren.</h2> 
+    <button id="kontaktButton" onclick="window.location.href = 'contact.html'">SAG HALLO</button>
+
+
+    <div id="loaderContainer">
+        <div id="loadingScreen"></div> 
+        <div class="loader"></div>
+      </div>   
+     
+  </section>
+  <div class="footerabout">
+    <a class="impressum" href="impressum.html">IMPRESSUM</a>  <a class="impressum" href="datenschutz.html">DATENSCHUTZERKLÄRUNG</a>
+  </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
