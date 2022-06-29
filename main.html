@@ -28,8 +28,10 @@
   <script src="main.js"></script>
 
   <!-- fürOculusContoller -->
-  <script src="./oculus-thumbstick-controls.js"></script>
-  <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+  <!-- <script src="./oculus-thumbstick-controls.js"></script>
+  <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script> -->
+  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="/assets/LogoCamp.png">
@@ -746,11 +748,19 @@
     </a-entity> -->
 
   <!-- Camera + controllers rig -->
-  <a-entity id="rig">
+  <!-- <a-entity id="rig">
     <a-camera position="0 5 100" kinematic-body="" wasd-controls="acceleration:10"></a-camera>
     <a-entity oculus-touch-controls="hand: left" ></a-entity>
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+  </a-entity> -->
+  <a-entity id="cameraRig">
+    <!-- camera -->
+    <a-entity id="head" camera wasd-controls look-controls ></a-entity>
+    <!-- hand controls -->
+    <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+    <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
   </a-entity>
+
 
   </a-scene>
   <!-- /a-scene  ------------------------------------------------------------->
