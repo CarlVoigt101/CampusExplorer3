@@ -1,0 +1,762 @@
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Campus Explorer Ostfalia Salzgitter</title>
+  <meta name="description" content="Virtual Campus Explorer - Ostfalia Salzgitter" />
+  <meta name="author" content="Carl Voigt"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/assets/">
+
+
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/deprecated/Geometry.js"></script>
+
+  <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+
+  <!--look-at-->
+  <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
+
+    <!-- A-Frame Look At Component -->
+  <script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script>
+
+  <!-- fürColider -->
+  <script src="main.js"></script>
+
+  <!-- fürOculusContoller -->
+  <script src="./oculus-thumbstick-controls.js"></script>
+  <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/assets/LogoCamp.png">
+
+</head>
+<!-- /head----------------------------------------------------------------------->
+<body onload="loadFunction();">
+
+  <div>
+    <button id="Teleport" class="Teleport"> 
+      <img id="roadIMG"src="assets/road.png">
+    </button>
+    <button class="RoadButton">
+      <img id="orbitIMG" src="assets/orbit.png">
+    </button>
+    <button id="Wireframe" class="Wireframe">ERKUNDEN
+      <img src="assets/explorIcon.png" style="height: 1.198vw;width: 1.198vw;">
+    </button>
+    <button id="backToOrbit" class="backToOrbit">
+      <img src="assets/X.png" style="width:1.146vw; height: auto;">
+    </button>
+    <!--<button id="topView" class="topView" >topView</button>-->
+    <button id="rundgang" class="rundgang" >&nbsp;&nbsp;TOUR STARTEN
+      <img src="assets/Vector_grey.png" style="float:right;margin-right:0.667vw;margin-top: 0.25vw;width:1.042vw;height: auto;">
+    </button>
+    <button id="plus" class="plus"><img src="assets/rightArrow.png"></button>
+    <button id="minus" class="minus"><img src="assets/leftArrow.png"></button>
+    <button id="up" class="upb"><img src="assets/leftArrow.png"></button>
+    <button id="dow" class="dowb"><img src="assets/rightArrow.png"></button>
+  </div>
+<!-- Headline-->
+<div id="CampusSZ">
+<h1>Campus<br>Salzgitter</h1>
+</div>
+<div id="HeadBG">
+</div>
+<!--Logo01-->
+<img id="Logo01" src="assets/LogoCamp.png" onclick="window.location.href = 'index.html'"> 
+<!-- Logo02-->
+<!-- <a id="Logo" href="main.html">
+<img id="LogoPNG" src="assets/LogoCamp.png">
+</a> -->
+<!-- Navbar-->
+<div class="navContainer">
+<a class="home" href="index.html">STARTSEITE</a>
+<a class="dreiD" href="main.html" style="text-decoration: underline; text-decoration-thickness: 2px;">3D MODELL</a>
+<a class="about" href="about.html">ÜBER DAS PROJEKT</a>
+<a class="contact" href="contact.html">KONTAKT</a>
+</div>
+<!-- Texte-->
+<div id="CEGR" class="raeume-container">
+  <div id="EG0">
+    <h3>EG</h3>
+  <a class="videoS">Videostudio</a> <br>
+  <a class="Audiomin">Audiomin</a> <br>
+  <a class="bib"">Bibliothek</a> <br>
+  </div>
+
+  <div id="E1">
+    <h3>E1</h3>
+    <a class="ausL">Technikausleihe</a> <br>
+    <a class="fotoS">Fotostudio</a> <br>
+    <a class="regieR"">Regie</a> <br>
+    <a class="semi1"">Seminarräume</a> <br>
+  </div>
+
+  <div id="E2">
+    <h3>E2</h3>
+    <a class="post">Postproduktion</a> <br>
+    <a class="pool">Poolräume</a> <br>
+    <a class="dienst"">Dienstzimmer</a> <br>
+    <a class="semi2"">Seminarräume</a> <br>
+  </div>
+</div>
+  <div id="CBG">
+  </div>
+<div id="cHead">
+<h2>Gebäude C<br>Mediengebäude</h2>
+</div>
+<div id="dHead">
+  <h2>Gebäude D</h2>
+  </div>
+  <div id="aHead">
+    <h2>Gebäude A<br>Altgebäude</h2>
+    </div>
+    <div id="mHead">
+      <h2>Mensa</h2>
+      </div>
+      <div id="kHead">
+        <h2>Gebäude K</h2>
+        </div>
+        <div id="bHead">
+          <h2>Gebäude B</h2>
+          </div>
+<div id="avatare">
+  <img id="avaDef" src="assets/avataaars.png">
+  <img id="avaLach" src="assets/avataaars(lachen).png">
+  <img id="avaLeft" src="assets/avataaars(left).png">
+  <img id="avaZwink" src="assets/avataaars(zwinker).png">
+  <img id="avaLove" src="assets/avataaars(DEF1).png">
+  <img id="avaEye" src="assets/avataaars(eat).png">
+</div>
+<div id="avaKreis"></div>
+
+  <img id="sprechG" src="assets/SprechblaseGroß.png">
+  <img id="sprechK" src="assets/SprechblaseKlein.png">
+
+  <div id="sprechTexte"> 
+<div id="txt1"><p>Willkommen auf dem Virtuellen Ostfalia Campus Salzgitter!</p></div>
+<div id="txt2"><p>Wenn du Lust auf eine kleinen Rundgang über den Campus hast, klicke einfach auf den “TOUR STARTEN” Button.</p></div>
+<div id="txt3"><p>Über den Schalter oben rechts kannst du zwischen Orbit und Street-View Perspektive wechseln.</p></div>
+<div id="txt4"><p>Wenn du mehr über die Steuerung erfahren möchtest, klicke mich an <br> anderenfalls viel Spaß beim Erkunden!</p></div>
+<div id="txtC"><p>Das Gebäude C ist das jüngste Gebäude auf dem Campus, seit 2013 dreht sich hier alles rund um Medien.</p></div>
+<div id="txtA"><p>Im Altgebäude A mit seiner historischen Lohnhalle wurde bis 1967 Erz abgebaut, heute wird hier Wissen gefördert.</p></div>
+<div id="txtB"><p>Im Gebäude B befindet sich der größte Hörsaal am Campus, gleich neben dem Bistro wo man sich die Pausen mit einem leckeren Café versüßen kann.</p></div>
+<div id="txtD"><p>Fachschaftsrat und AStA lassen sich im Gebäude D finden.</p></div>
+<div id="txtM"><p>In der Mensa bietet das Studentenwerk OstNiedersachsen in der Mittagspause eine Auswahl an leckeren Gerichten an.</p></div>
+<div id="txtI1"><p>Wenn du dich in der Orbit-Ansicht befindest, kannst du, wenn du die linke Maustaste gedrückt hälts und sie dann nach links oder rechts bewegst, um den Campus rotieren.</p></div>
+<div id="txtI2"><p>Befindest du dich im Street-View, bewegst du dich mit den WASD Tasten vorwärts, rückwärts, nach rechts und links, während du dich mit gedrückter linker Maustaste umschauen kannst.</p></div>
+<div id="txtI3"><p>Klicke hier, wenn du mehr über die Steuerung erfahren möchtest.</p></div>
+  </div>
+
+  <div id='seconds-counter'></div>
+
+<div id="loaderContainer">
+  <div id="loadingScreen"></div> 
+  <div class="loader"></div>
+</div>
+  <!-- a-scene  ------------------------------------------------------------->
+  <a-scene physics="gravity: -55" shadow="type: pcfsoft" vr-mode-ui="" device-orientation-permission-ui="" fog="">
+    <a-assets>
+      <a-asset-item id="campus" src="assets/WPF_CAMPUS.glb"></a-asset-item>
+      <a-asset-item id="cBuilding" src="assets/WPF_CAMPUS_C_BUILDING.glb"></a-asset-item>
+      <a-asset-item id="alphaGrey" src="assets/alpha.glb"></a-asset-item>
+      <a-asset-item id="aplhaOrange" src="assets/alpha_orange.glb"></a-asset-item>
+      <a-asset-item id="aplhaGreen" src="assets/alphaGreen.glb"></a-asset-item>
+      <a-asset-item src="assets/bus.glb"></a-asset-item>
+      <a-asset-item src="assets/car.glb"></a-asset-item>
+      <a-asset-item src="assets/Cloud.glb"></a-asset-item>
+      <img id="sky" src="assets/bgcross.png">
+    </a-assets>
+    <!-- /a-assets  ------------------------------------------------------------->
+    <!-- <a-entity text="value:C;" position="-35 40 130" scale=" 80 80 80" look-at="src: #camera"></a-entity> -->
+    <!-- Collisions Boxen-->
+    <!--ground-->
+    <a-box color="blue" static-body depth="400" height="0.5" width="200" position="0.75 1.6 -1" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="300" height="0.5" width="20" position="11 2.7 -50" rotation="0 0 24"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="300" height="0.5" width="100" position="70 7 -80" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="250" height="0.5" width="80" position="70 7.5 -80" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="100" height="0.5" width="100" position="70 3 120" rotation="5 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="50" height="0.5" width="20" position="10 1 125" rotation="7 0 15"
+      visible="false"></a-box>
+    <!--walls-->
+    <!--aGeb-->
+    <a-box color="blue" static-body depth="48" height="20" width="27" position="26 2.7 -132" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="65" height="20" width="35" position="51 2.7 -137" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="41" height="20" width="28" position="65 2.7 -58.5" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="70" height="20" width="14" position="76 2.7 -100" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--cGeb-->
+    <a-box color="blue" static-body depth="0.5" height="20" width="38" position="-36 2.7 108.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.5" height="20" width="38" position="-36 2.7 153" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.5" height="20" width="45" position="-55 2.7 130" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.5" height="20" width="14" position="-17 2.7 115" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.5" height="20" width="22" position="-17 2.7 142" rotation="0 90 0"
+      visible="false"></a-box>
+    <!--bGeb-->
+    <a-box color="blue" static-body depth="42" height="30" width="14" position="68 2.7 0" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="34" height="30" width="18" position="62 2.7 19" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--kGeb-->
+    <a-box color="blue" static-body depth="12" height="20" width="10" position="86 2.7 -26" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--Mensa-->
+    <a-box color="blue" static-body depth="40" height="20" width="25" position="106 2.7 -135" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="5" height="1" width="15" position="90 2.7 -128" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--dGeb-->
+    <a-box color="blue" static-body depth="146" height="10" width="13" position="-40.5 2.7 -3.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="40" height="10" width="25" position="-35 2.7 50" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="40" height="10" width="25" position="-35 2.7 -23" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--noneGeb-->
+    <a-box color="blue" static-body depth="35" height="20" width="20" position="-32 2.7 -156" rotation="0 90 0"
+      visible="false"></a-box>
+    <!--CGebInnen-->
+    <!--Treppe-->
+    <a-box color="blue" static-body depth="2" height="0.3" width="7" position="-27 1 131" rotation="0 0 -35"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="2" height="0.3" width="2" position="-30.5 2.8 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-33.1 4.2 131" rotation="0 0 -35"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="48" height="0.3" width="20" position="-45 5.4 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="4" height="0.3" width="3" position="-33 5.4 124" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="3" height="0.3" width="7" position="-32 5.4 128" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="3" height="0.3" width="2" position="-29 5.8 128" rotation="0 0 90"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="3" height="0.1" width="4" position="-32 6.2 126.2" rotation="90 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-38 6.2 131" rotation="0 0 -35"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-41.5 8.2 131" rotation="0 0 -35"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="3" height="0.3" width="15" position="-50.5 9.2 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--1-->
+    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 5.2 143" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--2-->
+    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 9 144" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 9 118" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--Wände-->
+    <!--min-->
+    <a-box color="blue" static-body depth="0.01" height="5" width="14" position="-27.1 2.7 115" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-22 2.7 122.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="12" width="11" position="-22.5 1.4 116" rotation="-62 0 0"
+      visible="false"></a-box>
+    <!--studio-->
+    <a-box color="blue" static-body depth="0.01" height="8" width="17" position="-30 3 118" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="7" position="-35 2 126.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="4" height="0.3" width="5" position="-33 5.4 124" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="6" position="-35 2.7 122" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-38.5 2.7 123" rotation="0 90 0"
+      visible="false"></a-box>
+    <!--studioNebenräume-->
+    <a-box color="blue" static-body depth="0.01" height="8" width="11" position="-42 2.7 115" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="4" position="-46 2.7 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="7" position="-49.5 2.7 115" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 119" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 125" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="3" position="-47 2.7 123.5" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="4" width="1.5" position="-45 2.7 125" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-40 2.7 127" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-40 2.7 125" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--bib-->
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-20 2.7 132" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-18.5 2.7 139.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-20 2.7 145.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="12" position="-22.45 2.7 141" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="2.5" position="-24 2.7 151" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-23 2.7 150" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="2.8" position="-25.2 2.7 134" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="13" position="-33 2.7 133" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="10" position="-40 2.7 138" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="9" position="-49 2.7 133" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-35 2.7 135" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-42 2.7 135" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-45 2.7 135" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-52 2.7 141" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-52 2.7 136" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="9" position="-50 2.7 127" rotation="0 0 0"
+      visible="false"></a-box>
+    <!--door-->
+    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-20 2.7 130" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-20 2.7 124" rotation="0 90 0"
+      visible="false"></a-box>
+    <!--1Wände-->
+    <a-box color="blue" static-body depth="1" height="5" width="7" position="-38 6 126" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45 6 112" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 120" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 127" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 135" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 142" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-45 6 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-36 6 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-38.6 6 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-29 6 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-27 6 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-20.2 6 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="4" position="-19.5 6 142" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-22 7 131" rotation="0 0 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="2" width="4.5" position="-39 6 141.3" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="2" width="4.5" position="-39 6 137" rotation="0 0 0"
+      visible="false"></a-box>
+
+
+    <!--2Wände-->
+    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45 9 112" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 120" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 127" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 135" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 142" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-45 9 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-36 9 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-38.6 9 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-29 9 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-27 9 149" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-20.2 9 145" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 9 142" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 9 139" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 13 136" rotation="0 0 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 13 134" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 131" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 128" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 125" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 122" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 119.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 117" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 114.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 111.5" rotation="0 0 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-22 9.1 131" rotation="90 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="16" position="-26 10 124" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="3" width="5.5" position="-38 10 141.3" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-38 10 138.5" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-38 10 133" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="2" position="-42 10 139" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="1.5" position="-42 10 134" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="5" position="-35 10 136" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-29 10 141.3" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-30 10 135" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="5" position="-26 10 139" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-30 10 132" rotation="0 0 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-25 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-29.5 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-32.5 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-36 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-39 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-42 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-45 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="0.01" height="3" width="17" position="-33 10 117" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="12" position="-35 10 127" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="10" position="-29 10 122" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="0.01" height="3" width="3" position="-37 10 128" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="1" height="4" width="8" position="-9 1 74" rotation="0 90 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="10" position="-9 1 88" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="6" position="-9 1 100" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 102" rotation="0 0 0"visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 97" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 92" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 83" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 77" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 70" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" static-body depth="1" height="8" width="2" position="-7 1 121.5" rotation="0 0 0" visible="false">
+    </a-box>
+
+<!--PortalCollider-->
+    <a-sphere visible="false" portalcollider position="-19 1.6 126.5" radius="1.2" color="red"></a-sphere>
+<!--Target-->
+    <a-sphere class="collidable" id="target" position="0 0 15" radius="0.2" color="#EF2D5E" visible="false"
+      animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
+    </a-sphere>
+    <!-- hover boxen -->
+    <a-box smootha hover-listener1 color="blue" class="collidable" id="cGeb" position="-36 05 132" depth="50"
+      height="30" width="39" visible="false">
+    </a-box>
+
+    <a-box smoothb hover-listener2 class="collidable" id="bGeb" color="blue" position="68 05 10" depth="50" height="26"
+      width="30" visible="false">
+    </a-box>
+
+    <a-box smoothc hover-listener3 class="collidable" id="kGeb" color="red" position="86 05 -26" depth="12" height="15"
+      width="10" visible="false">
+    </a-box>
+
+    <a-box smoothd hover-listener4 class="collidable" id="aGeb" color="pink" position="50 05 -100" depth="110"
+      height="15" width="70" visible="false">
+    </a-box>
+
+    <a-box smoothe hover-listener5 class="collidable" id="dGeb" color="orange" position="-40.5 02 -59.5" depth="33"
+      height="6" width="13" visible="false">
+    </a-box>
+
+    <a-box smoothf hover-listener6 class="collidable" id="MensaGeb" color="yellow" position="106 05 -135" depth="36"
+      height="16" width="27" visible="false">
+    </a-box>
+
+  <!--CampusModel-->
+    <a-entity id="world" gltf-model="assets/WPF_CAMPUS.glb" change-material-on-click shadow="cast:true; receive:true"></a-entity>
+    <a-entity id="world" gltf-model="assets/WPF_CAMPUS_C_BUILDING.glb" change-material-on-click shadow="cast:true; receive:true"></a-entity>
+    <!-- C-Alpha -->
+    <a-entity alpha id="alpha" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="-35 50 130"
+      scale="20 50 25" visible="false"></a-entity>
+    <!-- D-Alpha -->
+    <a-entity id="alpha2" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="-40.5 40 -60"
+      scale="7 40 18" visible="false"></a-entity>
+    <!-- A-Alpha -->
+    <a-entity id="alpha3" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="48 40 -100"
+      scale="40 40 60" visible="false"></a-entity>
+    <!-- B-Alpha -->
+    <a-entity id="alpha4" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="70 40 10"
+      scale="18 40 30" visible="false"></a-entity>
+    <!-- K-Alpha -->
+    <a-entity id="alpha5" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="85 40 -26"
+      scale="7 40 7" visible="false"></a-entity>
+    <!-- M-Alpha -->
+    <a-entity id="alpha6" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="105 40 -135"
+      scale="15 40 20" visible="false"></a-entity>
+
+    <!-- C-Alpha -->
+    <!-- <a-entity id="alpha7" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="-35 20 130"
+      scale="0.2 20 0.2" visible="true"></a-entity>
+    <!-- D-Alpha -->
+    <!-- <a-entity id="alpha8" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="-40.5 20 -60"
+      scale="0.2 20 0.2" visible="true"></a-entity> -->
+    <!-- A-Alpha -->
+    <!-- <a-entity id="alpha9" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="48 20 -100"
+      scale="0.2 20 0.2" visible="true"></a-entity> -->
+    <!-- B-Alpha -->
+    <!-- <a-entity id="alpha10" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="70 20 10"
+      scale="0.2 20 0.2" visible="true"></a-entity> -->
+    <!-- K-Alpha -->
+    <!-- <a-entity id="alpha11" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="85 20 -26"
+      scale="0.2 20 0.2" visible="true"></a-entity> -->
+    <!-- M-Alpha -->
+    <!-- <a-entity id="alpha12" gltf-model="assets/alpha.glb" shadow="cast:false; receive:true" position="105 20 -135"
+      scale="0.2 20 0.2" visible="true"></a-entity> -->
+      
+    <!-- Etagen im WireframeModus-->
+    <!--AGeb-->
+    <a-box id="AOG" color="blue" depth="28" height="0.1" width="39" position="65 12 -58" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <a-box id="AEG" color="blue" depth="115" height="0.1" width="68" position="50 7 -102" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <a-box id="AUG1" color="blue" depth="115" height="0.1" width="68" position="50 3 -102" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <a-box id="AUG2" color="blue" depth="115" height="0.1" width="68" position="50 0 -102" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <!--BGeb-->
+    <a-box id="BEG" color="blue" depth="60" height="0.1" width="35" position="70 7 10" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <!--CGeb-->
+    <a-box id="CEG" color=" #d4fc79" depth="45" height="0.1" width="38" position="-36 -0.1 130" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <a-box id="CE1" color=" #d4fc79" depth="45" height="0.1" width="38" position="-36 4 130" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <a-box id="CE2" color=" #d4fc79" depth="45" height="0.1" width="38" position="-36 8 130" material="opacity: 0.3; transparent: true" visible="false"></a-box>
+    <!-- Räume im WireframeModus-->
+    <a-entity id="StudioWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-40 8 116" scale="7 8 7" visible="false"></a-entity>
+    <a-entity id="AudioMinWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-24 8 116" scale="7 8 7" visible="false"></a-entity>
+    <a-entity id="BibWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-36 4 145" scale="19 4 8" visible="false"></a-entity>
+    <!--CE1 -->
+    <a-entity id="AusleiheWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-40 8.1 149" scale="4 4 3" visible="false"></a-entity>
+    <a-entity id="FotoStudioWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-29 8.1 139" scale="3 4 4" visible="false"></a-entity>
+    <a-entity id="RegieRaumWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-35 8.1 120" scale="4 4 3" visible="false"></a-entity>
+
+    <a-entity id="SeminarRaumWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 8.1 147" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="SeminarRaumWireFrameModus1" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 8.1 136" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="SeminarRaumWireFrameModus2" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 8.1 125" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="SeminarRaumWireFrameModus3" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 8.1 114" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="SeminarRaumWireFrameModus4" gltf-model="assets/alphaGreen.glb" receive:true" position="-31 8.1 149" scale="4 4 3" visible="false"></a-entity>
+    <a-entity id="SeminarRaumWireFrameModus5" gltf-model="assets/alphaGreen.glb" receive:true" position="-22 8.1 149" scale="4 4 3" visible="false"></a-entity>
+    <!--CE2-->
+    <a-entity id="PostproduktionWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-35 12.1 123" scale="5 4 5" visible="false"></a-entity>
+
+    <a-entity id="SeminarRaumE2WireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-40 12.1 149" scale="4 4 3" visible="false"></a-entity>
+    <a-entity id="SeminarRaumE2WireFrameModus1" gltf-model="assets/alphaGreen.glb" receive:true" position="-31 12.1 149" scale="4 4 3" visible="false"></a-entity>
+    <a-entity id="SeminarRaumE2WireFrameModus2" gltf-model="assets/alphaGreen.glb" receive:true" position="-22 12.1 149" scale="4 4 3" visible="false"></a-entity>
+
+    <a-entity id="PoolRaumWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 12.1 147" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="PoolRaumWireFrameModus1" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 12.1 136" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="PoolRaumWireFrameModus2" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 12.1 125" scale="5 4 5" visible="false"></a-entity>
+    <a-entity id="PoolRaumWireFrameModus3" gltf-model="assets/alphaGreen.glb" receive:true" position="-50 12.1 114" scale="5 4 5" visible="false"></a-entity>
+
+    <a-entity id="DienstzimmerE2WireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 144" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus1" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 141" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus2" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 138" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus3" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 135" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus4" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 132" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus5" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 129" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus6" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 126" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus7" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 123" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus8" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 120" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus9" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 117" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus10" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 114" scale="2 4 1.5" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus11" gltf-model="assets/alphaGreen.glb" receive:true" position="-20 12.1 111" scale="2 4 1.5" visible="false"></a-entity>
+    <!--ParkplatzSeite-->
+    <a-entity id="DienstzimmerE2WireFrameModus12" gltf-model="assets/alphaGreen.glb" receive:true" position="-28 12.1 112" scale="1.5 4 2" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus13" gltf-model="assets/alphaGreen.glb" receive:true" position="-31 12.1 112" scale="1.5 4 2" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus14" gltf-model="assets/alphaGreen.glb" receive:true" position="-34 12.1 112" scale="1.5 4 2" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus15" gltf-model="assets/alphaGreen.glb" receive:true" position="-37 12.1 112" scale="1.5 4 2" visible="false"></a-entity>
+    <a-entity id="DienstzimmerE2WireFrameModus16" gltf-model="assets/alphaGreen.glb" receive:true" position="-40 12.1 112" scale="1.5 4 2" visible="false"></a-entity>
+    <!-- BGeb-->
+    <a-entity id="AudioMaxWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="78 15.1 4" scale="9 8 9" visible="false"></a-entity>
+    <a-entity id="CafeteriaWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="62 15.1 28" scale="8 8 9" visible="false"></a-entity>
+    <!-- AGeb-->
+    <!-- EG-->
+    <a-entity id="PrüfungssekretariatWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="62 15.1 -70" scale="4 8 3" visible="false"></a-entity>
+    <!-- OG-->
+    <a-entity id="StudierendenServiceBüroWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="62 20.1 -70" scale="4 8 3" visible="false"></a-entity>
+    <a-entity id="SekretariatWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="80 20.1 -65" scale="4 8 3" visible="false"></a-entity>
+    <a-entity id="DekanBüroWireFrameModus" gltf-model="assets/alphaGreen.glb" receive:true" position="80 20.1 -60" scale="4 8 3" visible="false"></a-entity>
+    <!--bus-->
+    <a-entity id="bus1" gltf-model="assets/bus.glb" receive:true" rotation="0 180 0" position="-1.5 0.2 120" scale="0.6 0.6 0.6" visible="true" animation="property: position; to: -1.5 0.2 -73; dur: 20000; easing: easeOutSine; loop: false"></a-entity>
+    <!--cars-->
+    <a-entity id="car1" gltf-model="assets/car.glb" receive:true" rotation="0 180 0" position="-50 0.3 73" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car2" gltf-model="assets/car.glb" receive:true" rotation="0 0 0" position="-38 0.3 100" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car2.1" gltf-model="assets/car.glb" receive:true" rotation="0 0 0" position="-41 0.3 100" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car2.2" gltf-model="assets/car.glb" receive:true" rotation="0 180 0" position="-44 0.3 98.5" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car3" gltf-model="assets/car.glb" receive:true" rotation="0 0 0" position="-25 0.3 83" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car3.1" gltf-model="assets/car.glb" receive:true" rotation="0 0 0" position="-28 0.3 83" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car4" gltf-model="assets/car.glb" receive:true" rotation="0 270 0" position="25 5.3 73" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car5" gltf-model="assets/car.glb" receive:true" rotation="0 270 0" position="25.5 5.4 70" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car5.1" gltf-model="assets/car.glb" receive:true" rotation="0 270 0" position="28 5.7 57" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car6" gltf-model="assets/car.glb" receive:true" rotation="0 90 0" position="25.5 5.1 80" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car7" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="41 5.8 60" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car8" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="41.4 5.9 57" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car9" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="41.8 6 54" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car10" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="6 0.1 -40" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car11" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="6 0.1 -43" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car12" gltf-model="assets/car.glb" receive:true" rotation="0 120 0" position="6 0.1 -46" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car13" gltf-model="assets/car.glb" receive:true" rotation="0 90 0" position="-8.5 0.3 56" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car13" gltf-model="assets/car.glb" receive:true" rotation="0 90 0" position="-8.5 0.3 59" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    <a-entity id="car13" gltf-model="assets/car.glb" receive:true" rotation="0 270 0" position="-9.7 0.3 53" scale="0.35 0.35 0.35" visible="true" ></a-entity>
+    
+    <!--clouds-->
+    <a-entity id="cloud" gltf-model="assets/Cloud.glb" receive:true" rotation="0 90 0" position="-110 125 -30" scale="5 5 5" visible="true" animation="property: position; to: -150 100 300; dur: 50000; easing: linear; loop: true"></a-entity>
+    <a-entity id="cloud" gltf-model="assets/Cloud.glb" receive:true" rotation="0 90 0" position="-130 125 -60" scale="9 9 9" visible="true" animation="property: position; to: -150 100 300; dur: 50000; easing: linear; loop: true"></a-entity>
+    
+    <a-entity id="cloud" gltf-model="assets/Cloud.glb" receive:true" rotation="0 90 0" position="130 115 100" scale="9 9 9" visible="true" animation="property: position; to: 130 100 300; dur: 80000; easing: linear; loop: true"></a-entity>
+    <a-entity id="cloud" gltf-model="assets/Cloud.glb" receive:true" rotation="0 270 0" position="60 105 -200" scale="10 8 10" visible="true" animation="property: position; to: 130 100 300; dur: 80000; easing: linear; loop: true"></a-entity>
+    <a-entity id="cloud" gltf-model="assets/Cloud.glb" receive:true" rotation="0 90 0" position="-100 50 -50" scale="4 4 4" visible="true" animation="property: position; to: -100 50 300; dur: 80000; easing: linear; loop: true"></a-entity>
+    <!--light ------------------------------------------------------------------------->
+
+    <a-entity id="lightMain1" light="type: directional;
+      color:#FFFFFF;
+      intensity: 0.4;
+      castShadow: true;
+      shadowBias: -0.008;
+      shadowCameraTop: 200;
+      shadowCameraRight: 200;
+      shadowCameraBottom: -200;
+      shadowCameraLeft: -180" position=" 100 80 130">
+
+    </a-entity>
+    <a-entity id="lightMain2" light="type: directional;
+    color:#FFFFFF;
+    intensity: 0.15;
+    castShadow: false;
+    shadowBias: -0.008;
+    shadowCameraTop: 200;
+    shadowCameraRight: 200;
+    shadowCameraBottom: -200;
+    shadowCameraLeft: -180" position=" -120 50 -150">
+
+  </a-entity>
+
+    <a-entity light="type: ambient;
+      color:#FFFFFF;
+      intensity: 0.6;">
+    </a-entity>
+
+    <a-light id="light1" color="#a9e060" position="-36 5 138" angle="0" target="#directionaltarget" intensity="0.2">
+      <a-entity id="directionaltarget" position="-36 0 138"></a-entity>
+    </a-light>
+    <a-light id="light2" color="#a9e060" position="-36 5 138" angle="100" intensity="0.2"></a-light>
+    <!--sky ------------------------------------------------------------------------->
+    <a-sky src="#sky" radius="260" side="double" rotation="180 0 0" position="0 0 -10"></a-sky>
+
+    <!-- Kamera mit Cursor und Wasd Bewegungskontrolle -->
+
+    <!--<a-entity id="camera" rotation="10 100 110" camera look-controls wasd-controls="acceleration:30" cursor="rayOrigin: mouse"
+      raycaster="objects: .collidable" position="10 120 15" rotation="0 0 0"
+      animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
+  objekt mit Sphere-Collider, als Kind der Kamera übernimmt es die Position des Eltern Elementes, Kamera position == Sphere position  -->
+    <!--<a-sphere sphere-collider='' id="sphere" paosition="0 0 0" radius="0.01"></a-sphere>
+    </a-entity>-->
+
+    <!--<a-entity id="camera" camera look-controls wasd-controls="acceleration: 200" cursor="rayOrigin: mouse"
+    raycaster="objects: .collidable" position="0 100 0" rotation="0 0 0" mylink
+    animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
+ objekt mit Sphere-Collider, als Kind der Kamera übernimmt es die Position des Eltern Elementes, Kamera position == Sphere position  -->
+    <!--<a-sphere sphere-collider='' id="sphere" position="0 0 0" radius="0.01"></a-sphere>
+  </a-entity> -->
+
+    <!-- <a-entity rotation-reader id="camera" camera cursor="fuseTimeout:0; rayOrigin: mouse" raycaster="objects: .collidable"
+      position="50 10 200" rotation="0 0 0" look-controls="enabled: false" orbit-controls="
+        target: #target;
+        enabled: true;
+        enableDamping: true;
+        dampingFactor: 0.25;
+        rotateSpeed:0.25;
+        rotateToSpeed: 0.004;
+        rotateTo: -130 140 -5;
+        minDistance: 30;
+        maxDistance: 200;
+        autoRotate: false;
+        autoRotateSpeed: 1;
+        maxPolarAngle: 1.5665; "
+      animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
+    </a-entity> -->
+
+    <!-- <a-entity id="camera2" position="50 20 150" camera look-controls wasd-controls="acceleration:30"
+      kinematic-body cursor="fuseTimeout:0; rayOrigin: mouse" raycaster="objects: .collidable"
+      animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
+      <a-sphere sphere-collider='' id="sphere" position="0 0 0" radius="0.01"></a-sphere>
+    </a-entity> -->
+
+  <!-- Camera + controllers rig -->
+  <a-entity id="rig">
+    <a-camera position="0 5 100" kinematic-body="" wasd-controls="acceleration:10"></a-camera>
+    <a-entity oculus-touch-controls="hand: left" ></a-entity>
+    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+  </a-entity>
+
+  </a-scene>
+  <!-- /a-scene  ------------------------------------------------------------->
+</body>
+
+
+<script src="script.js"></script>
+
+</html>
