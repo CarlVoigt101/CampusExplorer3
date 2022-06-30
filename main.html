@@ -11,7 +11,6 @@
   <link rel="icon" type="image/png" href="/assets/">
 
 
-  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/deprecated/Geometry.js"></script>
@@ -31,6 +30,14 @@
    <script src="./oculus-thumbstick-controls.js"></script>
   <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script> -->
   <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="js/aframe-environment-component.js"></script>
+  <script src="js/controller-listener.js"></script>
+  <script src="js/player-move.js"></script>
+  <script src="js/raycaster-extras.js"></script>
+  <script src="js/physx.release.js"></script>
+  <script src="js/physics.js"></script>
 
 
   <link rel="stylesheet" href="style.css">
@@ -161,7 +168,9 @@
   <div class="loader"></div>
 </div>
   <!-- a-scene  ------------------------------------------------------------->
-  <a-scene physics="gravity: -55" shadow="type: pcfsoft" vr-mode-ui="" device-orientation-permission-ui="" fog="">
+  <a-scene environment="preset: default;"
+  physx="autoLoad: true; delay: 1000; wasmUrl: js/physx.release.wasm; useDefaultScene: false;" shadow="type: pcfsoft">
+
     <a-assets>
       <a-asset-item id="campus" src="assets/WPF_CAMPUS.glb"></a-asset-item>
       <a-asset-item id="cBuilding" src="assets/WPF_CAMPUS_C_BUILDING.glb"></a-asset-item>
@@ -177,329 +186,329 @@
     <!-- <a-entity text="value:C;" position="-35 40 130" scale=" 80 80 80" look-at="src: #camera"></a-entity> -->
     <!-- Collisions Boxen-->
     <!--ground-->
-    <a-box color="blue" static-body depth="400" height="0.5" width="200" position="0.75 1.6 -1" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="400" height="0.5" width="200" position="0.75 1.6 -1" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="300" height="0.5" width="20" position="11 2.7 -50" rotation="0 0 24"
+    <a-box color="blue" physx-body="type: static;" static-body depth="300" height="0.5" width="20" position="11 2.7 -50" rotation="0 0 24"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="300" height="0.5" width="100" position="70 7 -80" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="300" height="0.5" width="100" position="70 7 -80" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="250" height="0.5" width="80" position="70 7.5 -80" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="250" height="0.5" width="80" position="70 7.5 -80" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="100" height="0.5" width="100" position="70 3 120" rotation="5 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="100" height="0.5" width="100" position="70 3 120" rotation="5 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="50" height="0.5" width="20" position="10 1 125" rotation="7 0 15"
+    <a-box color="blue" physx-body="type: static;" static-body depth="50" height="0.5" width="20" position="10 1 125" rotation="7 0 15"
       visible="false"></a-box>
     <!--walls-->
     <!--aGeb-->
-    <a-box color="blue" static-body depth="48" height="20" width="27" position="26 2.7 -132" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="48" height="20" width="27" position="26 2.7 -132" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="65" height="20" width="35" position="51 2.7 -137" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="65" height="20" width="35" position="51 2.7 -137" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="41" height="20" width="28" position="65 2.7 -58.5" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="41" height="20" width="28" position="65 2.7 -58.5" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="70" height="20" width="14" position="76 2.7 -100" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="70" height="20" width="14" position="76 2.7 -100" rotation="0 0 0"
       visible="false"></a-box>
     <!--cGeb-->
-    <a-box color="blue" static-body depth="0.5" height="20" width="38" position="-36 2.7 108.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.5" height="20" width="38" position="-36 2.7 108.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.5" height="20" width="38" position="-36 2.7 153" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.5" height="20" width="38" position="-36 2.7 153" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.5" height="20" width="45" position="-55 2.7 130" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.5" height="20" width="45" position="-55 2.7 130" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.5" height="20" width="14" position="-17 2.7 115" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.5" height="20" width="14" position="-17 2.7 115" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.5" height="20" width="22" position="-17 2.7 142" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.5" height="20" width="22" position="-17 2.7 142" rotation="0 90 0"
       visible="false"></a-box>
     <!--bGeb-->
-    <a-box color="blue" static-body depth="42" height="30" width="14" position="68 2.7 0" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="42" height="30" width="14" position="68 2.7 0" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="34" height="30" width="18" position="62 2.7 19" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="34" height="30" width="18" position="62 2.7 19" rotation="0 0 0"
       visible="false"></a-box>
     <!--kGeb-->
     <a-box color="blue" static-body depth="12" height="20" width="10" position="86 2.7 -26" rotation="0 0 0"
       visible="false"></a-box>
     <!--Mensa-->
-    <a-box color="blue" static-body depth="40" height="20" width="25" position="106 2.7 -135" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="40" height="20" width="25" position="106 2.7 -135" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="5" height="1" width="15" position="90 2.7 -128" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="5" height="1" width="15" position="90 2.7 -128" rotation="0 0 0"
       visible="false"></a-box>
     <!--dGeb-->
-    <a-box color="blue" static-body depth="146" height="10" width="13" position="-40.5 2.7 -3.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="146" height="10" width="13" position="-40.5 2.7 -3.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="40" height="10" width="25" position="-35 2.7 50" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="40" height="10" width="25" position="-35 2.7 50" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="40" height="10" width="25" position="-35 2.7 -23" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="40" height="10" width="25" position="-35 2.7 -23" rotation="0 0 0"
       visible="false"></a-box>
     <!--noneGeb-->
-    <a-box color="blue" static-body depth="35" height="20" width="20" position="-32 2.7 -156" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="35" height="20" width="20" position="-32 2.7 -156" rotation="0 90 0"
       visible="false"></a-box>
     <!--CGebInnen-->
     <!--Treppe-->
-    <a-box color="blue" static-body depth="2" height="0.3" width="7" position="-27 1 131" rotation="0 0 -35"
+    <a-box color="blue" physx-body="type: static;" static-body depth="2" height="0.3" width="7" position="-27 1 131" rotation="0 0 -35"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="2" height="0.3" width="2" position="-30.5 2.8 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="2" height="0.3" width="2" position="-30.5 2.8 131" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-33.1 4.2 131" rotation="0 0 -35"
+    <a-box color="blue" physx-body="type: static;" static-body depth="2" height="0.3" width="4" position="-33.1 4.2 131" rotation="0 0 -35"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="48" height="0.3" width="20" position="-45 5.4 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="48" height="0.3" width="20" position="-45 5.4 131" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="4" height="0.3" width="3" position="-33 5.4 124" rotation="0 0 0"
+    <a-box color="blue" sphysx-body="type: static;" tatic-body depth="4" height="0.3" width="3" position="-33 5.4 124" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="3" height="0.3" width="7" position="-32 5.4 128" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="3" height="0.3" width="7" position="-32 5.4 128" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="3" height="0.3" width="2" position="-29 5.8 128" rotation="0 0 90"
+    <a-box color="blue" physx-body="type: static;" static-body depth="3" height="0.3" width="2" position="-29 5.8 128" rotation="0 0 90"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="3" height="0.1" width="4" position="-32 6.2 126.2" rotation="90 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="3" height="0.1" width="4" position="-32 6.2 126.2" rotation="90 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-38 6.2 131" rotation="0 0 -35"
+    <a-box color="blue" physx-body="type: static;" static-body depth="2" height="0.3" width="4" position="-38 6.2 131" rotation="0 0 -35"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="2" height="0.3" width="4" position="-41.5 8.2 131" rotation="0 0 -35"
+    <a-box color="blue" physx-body="type: static;" static-body depth="2" height="0.3" width="4" position="-41.5 8.2 131" rotation="0 0 -35"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="3" height="0.3" width="15" position="-50.5 9.2 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="3" height="0.3" width="15" position="-50.5 9.2 131" rotation="0 0 0"
       visible="false"></a-box>
     <!--1-->
-    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 5.2 143" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="22" height="0.3" width="40" position="-36 5.2 143" rotation="0 0 0"
       visible="false"></a-box>
     <!--2-->
-    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 9 144" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="22" height="0.3" width="40" position="-36 9 144" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="22" height="0.3" width="40" position="-36 9 118" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="22" height="0.3" width="40" position="-36 9 118" rotation="0 0 0"
       visible="false"></a-box>
     <!--Wände-->
     <!--min-->
-    <a-box color="blue" static-body depth="0.01" height="5" width="14" position="-27.1 2.7 115" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="14" position="-27.1 2.7 115" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-22 2.7 122.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-22 2.7 122.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="12" width="11" position="-22.5 1.4 116" rotation="-62 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="12" width="11" position="-22.5 1.4 116" rotation="-62 0 0"
       visible="false"></a-box>
     <!--studio-->
-    <a-box color="blue" static-body depth="0.01" height="8" width="17" position="-30 3 118" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="8" width="17" position="-30 3 118" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="7" position="-35 2 126.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="7" position="-35 2 126.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="4" height="0.3" width="5" position="-33 5.4 124" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="4" height="0.3" width="5" position="-33 5.4 124" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="6" position="-35 2.7 122" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="6" position="-35 2.7 122" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-38.5 2.7 123" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="2" position="-38.5 2.7 123" rotation="0 90 0"
       visible="false"></a-box>
     <!--studioNebenräume-->
-    <a-box color="blue" static-body depth="0.01" height="8" width="11" position="-42 2.7 115" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="8" width="11" position="-42 2.7 115" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="4" position="-46 2.7 110" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="4" position="-46 2.7 110" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="7" position="-49.5 2.7 115" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="7" position="-49.5 2.7 115" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 119" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 119" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 125" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="5.5" position="-51 2.7 125" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="3" position="-47 2.7 123.5" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="3" position="-47 2.7 123.5" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="4" width="1.5" position="-45 2.7 125" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="4" width="1.5" position="-45 2.7 125" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-40 2.7 127" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="3" position="-40 2.7 127" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-40 2.7 125" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="3" position="-40 2.7 125" rotation="0 0 0"
       visible="false"></a-box>
     <!--bib-->
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-20 2.7 132" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-20 2.7 132" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-18.5 2.7 139.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="3" position="-18.5 2.7 139.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-20 2.7 145.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="3" position="-20 2.7 145.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="12" position="-22.45 2.7 141" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="12" position="-22.45 2.7 141" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="2.5" position="-24 2.7 151" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="2.5" position="-24 2.7 151" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-23 2.7 150" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="2" position="-23 2.7 150" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="2.8" position="-25.2 2.7 134" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="2.8" position="-25.2 2.7 134" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="13" position="-33 2.7 133" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="13" position="-33 2.7 133" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="10" position="-40 2.7 138" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="10" position="-40 2.7 138" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="9" position="-49 2.7 133" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="9" position="-49 2.7 133" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-35 2.7 135" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-35 2.7 135" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-42 2.7 135" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-42 2.7 135" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-45 2.7 135" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-45 2.7 135" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-52 2.7 141" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-52 2.7 141" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="4" position="-52 2.7 136" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="4" position="-52 2.7 136" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="9" position="-50 2.7 127" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="9" position="-50 2.7 127" rotation="0 0 0"
       visible="false"></a-box>
     <!--door-->
-    <a-box color="blue" static-body depth="0.01" height="5" width="3" position="-20 2.7 130" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="3" position="-20 2.7 130" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="5" width="2" position="-20 2.7 124" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="5" width="2" position="-20 2.7 124" rotation="0 90 0"
       visible="false"></a-box>
     <!--1Wände-->
-    <a-box color="blue" static-body depth="1" height="5" width="7" position="-38 6 126" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="5" width="7" position="-38 6 126" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45 6 112" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="8.5" position="-45 6 112" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 120" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-49.5 6 120" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 127" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 127" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 135" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="8.5" position="-45.5 6 135" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-49.5 6 131" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-49.5 6 142" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-49.5 6 142" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-45 6 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-45 6 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-36 6 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-36 6 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-38.6 6 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="6" position="-38.6 6 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-29 6 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="6" position="-29 6 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-27 6 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-27 6 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="6" position="-20.2 6 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="6" position="-20.2 6 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="4" position="-19.5 6 142" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="4" position="-19.5 6 142" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="7" position="-22 7 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="7" position="-22 7 131" rotation="0 0 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="0.01" height="2" width="4.5" position="-39 6 141.3" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="4.5" position="-39 6 141.3" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="2" width="4.5" position="-39 6 137" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="2" width="4.5" position="-39 6 137" rotation="0 0 0"
       visible="false"></a-box>
 
 
     <!--2Wände-->
-    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45 9 112" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="8.5" position="-45 9 112" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 120" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-49.5 9 120" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 127" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 127" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 135" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="8.5" position="-45.5 9 135" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 131" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-49.5 9 131" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-49.5 9 142" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-49.5 9 142" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-45 9 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-45 9 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-36 9 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-36 9 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-38.6 9 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6" position="-38.6 9 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-29 9 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6" position="-29 9 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="7" position="-27 9 149" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="7" position="-27 9 149" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-20.2 9 145" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6" position="-20.2 9 145" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 9 142" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 9 142" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 9 139" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 9 139" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 13 136" rotation="0 0 0"
-      visible="false"></a-box>
-
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 13 134" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 131" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 128" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 125" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 122" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 119.5" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 117" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 114.5" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4" position="-19.5 10 111.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 13 136" rotation="0 0 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-22 9.1 131" rotation="90 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 13 134" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="16" position="-26 10 124" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 131" rotation="0 0 0"
       visible="false"></a-box>
-
-    <a-box color="blue" static-body depth="0.01" height="3" width="5.5" position="-38 10 141.3" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 128" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6" position="-38 10 138.5" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 125" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-38 10 133" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 122" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="2" position="-42 10 139" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 119.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="1.5" position="-42 10 134" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 117" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="5" position="-35 10 136" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 114.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-29 10 141.3" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="8.5" position="-30 10 135" rotation="0 0 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="5" position="-26 10 139" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="6.5" position="-30 10 132" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4" position="-19.5 10 111.5" rotation="0 0 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-25 10 110" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6" position="-22 9.1 131" rotation="90 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-29.5 10 110" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-32.5 10 110" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-36 10 110" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-39 10 110" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-42 10 110" rotation="0 90 0"
-      visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="4.5" position="-45 10 110" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="16" position="-26 10 124" rotation="0 90 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="0.01" height="3" width="17" position="-33 10 117" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="5.5" position="-38 10 141.3" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="12" position="-35 10 127" rotation="0 0 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6" position="-38 10 138.5" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="10" position="-29 10 122" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6.5" position="-38 10 133" rotation="0 0 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="0.01" height="3" width="3" position="-37 10 128" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="2" position="-42 10 139" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="1.5" position="-42 10 134" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="5" position="-35 10 136" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6.5" position="-29 10 141.3" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="8.5" position="-30 10 135" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="5" position="-26 10 139" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="6.5" position="-30 10 132" rotation="0 0 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="1" height="4" width="8" position="-9 1 74" rotation="0 90 0" visible="false">
-    </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="10" position="-9 1 88" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-25 10 110" rotation="0 90 0"
       visible="false"></a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="6" position="-9 1 100" rotation="0 90 0"
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-29.5 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-32.5 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-36 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-39 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-42 10 110" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="4.5" position="-45 10 110" rotation="0 90 0"
       visible="false"></a-box>
 
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 102" rotation="0 0 0"visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="17" position="-33 10 117" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="12" position="-35 10 127" rotation="0 0 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="10" position="-29 10 122" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="0.01" height="3" width="3" position="-37 10 128" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="8" position="-9 1 74" rotation="0 90 0" visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 97" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="10" position="-9 1 88" rotation="0 90 0"
+      visible="false"></a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="6" position="-9 1 100" rotation="0 90 0"
+      visible="false"></a-box>
+
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 102" rotation="0 0 0"visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 92" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 97" rotation="0 0 0" visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 83" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 92" rotation="0 0 0" visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 77" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 83" rotation="0 0 0" visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="4" width="2" position="-10 1 70" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 77" rotation="0 0 0" visible="false">
     </a-box>
-    <a-box color="blue" static-body depth="1" height="8" width="2" position="-7 1 121.5" rotation="0 0 0" visible="false">
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="4" width="2" position="-10 1 70" rotation="0 0 0" visible="false">
+    </a-box>
+    <a-box color="blue" physx-body="type: static;" static-body depth="1" height="8" width="2" position="-7 1 121.5" rotation="0 0 0" visible="false">
     </a-box>
 
 <!--PortalCollider-->
@@ -748,13 +757,54 @@
     </a-entity> -->
 
   <!-- Camera + controllers rig -->
-  <a-entity id="rig">
-    <a-camera position="0 3 200" kinematic-body="" wasd-controls="acceleration:20"></a-camera>
+  <!-- <a-entity id="rig">
+    <a-camera position="0 5 0" kinematic-body="" wasd-controls="acceleration:20"></a-camera>
     <a-entity oculus-touch-controls="hand: left" ></a-entity>
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
     <a-entity raycaster="objects: .collidable" position="0 -0.9 0" rotation="90 0 0"></a-entity>
-  </a-entity> 
+  </a-entity>  -->
 
+  <a-entity 
+  id="player" 
+  position="0 0 0" 
+  player-move="controllerListenerId: #controller-data;
+               navigationMeshClass: environmentGround;">
+  
+  <a-camera></a-camera>
+
+  <a-entity 
+      id="controller-data" 
+      controller-listener="leftControllerId:  #left-controller; 
+                           rightControllerId: #right-controller;">
+  </a-entity>
+
+  <a-entity 
+      id="left-controller"
+      oculus-touch-controls="hand: left">
+  </a-entity>
+
+  <a-entity
+      id="right-controller"
+      oculus-touch-controls="hand: right"
+      raycaster="objects: .raycaster-target, .environmentGround;"
+      raycaster-extras="controllerListenerId: #controller-data; 
+                        beamImageSrc: #gradient; beamLength: 0.5;">
+  </a-entity>
+
+  <a-box physx-body="type: dynamic;"
+  raycaster-target="canGrab: true;"
+  physics-grab
+  position="-5 3 -5" rotation="10 20 30" 
+  material="color: yellow;">
+</a-box>
+
+<a-box
+        physx-body="type: kinematic;"
+        width="0.1" depth="4" height="1"
+        position = "9 1 4"
+        color = "#BBBBBB"
+        raycaster-target="canGrab: true;">
+    </a-box>
 
 
   </a-scene>
