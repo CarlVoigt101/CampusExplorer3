@@ -1428,7 +1428,25 @@ function showPage() {
   document.getElementById("loaderContainer").style.display = "none";
 }
 
+AFRAME.registerComponent("physics-grab", {
+  init: function () 
+  {
+      let self = this;
 
+      this.el.addEventListener("raycaster-grabbed", function() {
+         self.el.addState("grabbed"); 
+      });
+
+      this.el.addEventListener("raycaster-released", function() {
+         self.el.removeState("grabbed"); 
+      });
+  },
+
+  tick: function()
+  {
+
+  }
+});
 
 
 // var sectBool1 = true;
